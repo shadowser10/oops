@@ -1,0 +1,570 @@
+ATHUL_S
+ROLLNO:113
+
+
+ADD TWO NUMBERS
+
+CODE
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int a,b;
+cout<<"Enter the first number:";
+cin>>a;
+cout<<"Enter second number:";
+cin>>b;
+cout<<"The sum is "<<a+b<<"\n";
+return 0;
+}
+
+
+OUTPUT
+
+Enter the first number:5
+Enter second number:
+The sum is 7
+
+SUM OF ELEMENTS OF ARRAY
+
+CODE
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int a[100],sum=0;
+int n;
+cout<<"Enter number of elements of array:";
+cin>>n;
+cout<<"Enter elements:\n";
+for (int i=0;i<n;i++)
+{cin>>a[i];
+sum+=a[i];}
+cout<<"The sum of elements is "<<sum<<"\n";
+return 0;
+}
+
+OUTPUT
+
+Enter number of elements of array:5
+Enter elements:
+1
+2
+3
+4
+5
+The sum of elements is 15
+
+
+LARGEST AND SECOND LARGEST
+
+ CODE
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int a[100],i,j,max,max2;
+int n;
+cout<<"Enter the number of elements:";
+cin>>n;
+cout<<"Enter elements:\n";
+for (i=0;i<n;i++)
+cin>>a[i];
+max=a[0];
+max2=a[0];
+for (i=0;i<2;i++)
+{
+for (j=0;j<n;j++)
+{
+if (i==0)
+{
+if (a[j]>max)
+max=a[j];
+}
+else
+{if (a[j]>max2 && a[j]!=max )
+max2=a[j];
+}
+}}
+cout<<"The largest is "<<max<<" and the second largest is "<<max2<<"\n";
+return 0;
+}
+
+OUTPUT
+
+Enter the number of elements:5
+Enter elements:
+1
+2
+3
+4
+5
+The largest is 5 and the second largest is 4
+
+LAB CYCLE 1
+
+PHONE NUMBER
+
+ CODE
+
+ #include<iostream>
+using namespace std;
+struct number{ int ac,ex,ph;}
+n[2];
+int main()
+{
+ n[1].ac=91;
+ n[1].ex=953;
+ n[1].ph=124315;
+ cout<<"Enter country code";
+cin>>n[2].ac;
+cout<<"Enter the exchange number";
+cin>>n[2].ex;
+cout<<"Enter your number";
+cin>>n[2].ph;
+cout<<"phone number "<<"(+"<<n[1].ac<<")"<<"-"<<n[1].ex<<" "<<n[1].ph<<endl;
+cout<<"new number "<<"(+"<<n[2].ac<<")"<<"-"<<n[2].ex<<" "<<n[2].ph<<endl;
+return 0;
+}
+
+
+OUTPUT
+
+Enter country code62
+Enter the exchange number253
+Enter your number9563214
+phone number (+91)-953 124315
+new number (+62)-253 9563214
+
+TRANGLE VALIDATION
+
+SOURCE CODE
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+int a,b,c,ar;
+float s;
+cout<<"Enter the sides of the triangle:\n";
+cin>>a;
+cin>>b;
+cin>>c;
+if (a+b>c)
+{
+cout<<"The traingle is valid\n";
+s=(a+b+c)/2;
+ar=sqrt(s*(s-a)*(s-b)*(s-c));
+cout<<"The area is "<<ar<<"\n";
+}
+else
+cout<<"The triangle is not valid\n";
+return 0;
+}
+
+
+OUTPUT
+
+Enter the sides of the triangle:
+25 23 22
+Valid triangle
+Area =233
+
+Enter the sides of the triangle:
+3
+4
+10
+
+The triangle is invalid
+
+
+DATE VALIDATION
+
+SOURCE CODE
+
+#include <iostream>
+using namespace std;
+class dates
+{
+public:int d,m,y;
+	void assign()
+	{
+	cout<<"Enter the day:";
+	cin>>d;
+	cout<<"Enter the month:";
+	cin>>m;
+	cout<<"Enter the year:";
+	cin>>y;
+	valid(d,m,y);
+	}
+private:int leapcheck(int n)
+	{if (n%4==0)
+		return (29);
+	else
+		return (28);}
+	int thirty(int n)
+	{if (n<8)
+		{if (n%2!=0)
+		return (31);
+		else
+		return (30);}
+	else
+		{if (n%2==0)
+		return (31);
+		else
+		return (30);}
+	}
+	
+	int next(int d,int m,int y)
+	{
+	if (m==2)
+	{if (d+1>leapcheck(y))
+		cout<<"1/3/"<<y<<"\n";
+	else
+	cout<<d+1<<"/"<<m<<"/"<<y<<"\n";}
+	else	
+	{if (d+1>thirty(m))
+	{if (m+1>12)
+		cout<<"1/1/"<<y+1<<"\n";
+	 else
+		cout<<"1/"<<m+1<<"/"<<y<<"\n";
+	}
+	else
+	cout<<d+1<<"/"<<m<<"/"<<y<<"\n";
+	return 0;
+	}}
+	void valid(int d,int m,int y)
+	{
+	if ((m<1) || (m>12) || (d<1) || (d>31))
+	{cout<<"The date is invalid\n";}
+	else
+	{
+	if (m==2)
+	{
+	if (d<=leapcheck(y))
+	{cout<<"The date is valid\n";next(d,m,y);}
+	else
+	{cout<<"The date is invalid\n";}
+	}
+	else
+	{
+	if (d<=thirty(m))
+	{cout<<"The date is valid\n";next(d,m,y);}
+	else
+	{cout<<"The date is invalid\n";}
+	}
+	}
+	}
+
+};
+
+int main()
+{
+dates d;
+d.assign();
+}
+
+
+OUTPUT
+Enter the day:12
+Enter the month:3
+Enter the year:2006
+The date is valid
+13/3/2006
+
+Enter the day:12
+Enter the month:3
+Enter the year:2006
+The date is valid
+13/3/2006
+
+Enter the day:12
+Enter the month:3
+Enter the year:2006
+The date is valid
+13/3/2006
+
+ 
+
+BANK ACCOUNT
+
+SOURCE CODE
+
+ #include<iostream>
+ using namespace std;
+class date
+{
+ public: 
+   float s=0;
+   int dep;
+   int withd;
+   int bal;
+
+void detials()
+{
+int accno;
+char name[20];
+char accty[20];
+cout<<"Enter name";
+cin>>name;
+cout<<"Account number";
+cin>>accno;
+cout<<"Account type:";
+cin>>accty;
+  cout<<"NAME :"<<name<<endl;
+  cout<<"ACCOUNT NUMBER:"<<accno<<endl;
+ cout<<"ACCOUNT TYPE:"<<accty<<endl;
+}
+void deposit()
+{
+ cout<<"Enter the amount to deposit";
+ cin>>dep;
+ bal=dep+s;
+ s=bal;
+ cout<<"Balance="<<s<<endl;
+}
+void withdrawl()
+{ 
+  cout<<"The amount to withdraw";
+  cin>>withd;
+if (withd>s)
+ {
+  cout<<"insufficient bank balance";
+ }
+  else if(withd>20000)
+    {
+      cout<<"withdrawl limit is 20000"<<endl;
+    } 
+  else
+    {
+      bal=s-withd;
+      s=bal;
+      cout<<"Balance="<<s<<endl;
+    }
+}
+};
+int main()
+{
+ date obj;
+ int n;
+ do
+ {
+    cout<<"1.detials"<<endl<<"2.deposit"<<endl<<"3.withdraw"<<endl<<"4.EXIT"<<endl<<"Enter your choice ";
+    cin>>n;
+  switch(n)
+  {
+    case 1:obj.detials();
+    break;
+    case 2:obj.deposit();
+    break;
+    case 3:obj.withdrawl();
+    break;
+    case 4:break;
+    default:cout<<"Invalid";
+    break;
+   }
+ } while(n!=5);
+return 0;}
+
+
+OUTPUT
+
+ 1.detials
+2.deposit
+3.withdraw
+4.EXIT
+Enter your choice 1
+Enter name athuls 
+Account number 123456
+Account type: savings
+NAME :athuls
+ACCOUNT NUMBER:123456
+ACCOUNT TYPE:savings
+1.detials
+2.deposit
+3.withdraw
+4.EXIT
+Enter your choice 2
+Enter the amount to deposit 200000
+Balance=200000
+1.detials
+2.deposit
+3.withdraw
+4.EXIT
+Enter your choice 3
+The amount to withdraw 25000
+withdrawl limit is 20000
+1.detials
+2.deposit
+3.withdraw
+4.EXIT
+Enter your choice 3
+The amount to withdraw20000
+Balance=180000
+1.detials
+2.deposit
+3.withdraw
+4.EXIT
+
+
+CYCLE 2
+
+POWER OF VARIABLE
+
+SOURCE CODE
+
+  #include <iostream>
+using namespace std;
+int power(int a ,float b)
+{
+int s=1;
+for (int i=0;i<b;i++)
+s=s*a;
+return s;
+}
+float power(float a,float b)
+{
+float s=1;
+for (int i=0;i<b;i++)
+s=s*a;
+return s;
+}
+
+int main()
+{
+int c;
+cout<<"1.Integer\n2.Float\nEnter your choice:";
+cin>>c;
+if (c==1)
+{
+int a;float b;
+cout<<"Enter the value:";
+cin>>a;
+cout<<"Enter the power:"
+;cin>>b;
+cout<<power(a,b)<<"\n";
+}
+else if (c==2)
+{
+float a,b;
+cout<<"Enter the value:";
+cin>>a;
+cout<<"Enter the power:";
+cin>>b;
+cout<<power(a,b)<<"\n";
+}
+ 
+else
+cout<<"Invalid choice\n";
+return 0;
+}
+ 
+1.Integer
+2.Float
+Enter your choice:1
+Enter the value:5
+Enter the power:3
+125
+
+
+1.Integer
+2.Float
+Enter your choice:2
+Enter the value:3.5
+Enter the power:3
+525.219
+
+
+ SWAPPING
+
+#include <iostream>
+using namespace std;
+class num
+{
+public:int a;
+	void assign()
+	{
+	cout<<"Enter value:";
+	cin>>a;
+	}
+};
+void swap(int a,int b)
+{int temp;
+temp=a;
+a=b;
+b=temp;
+cout<<a<<b<<"\n";
+}
+void swap(int *a,int *b)
+{int temp;
+temp=*a;
+*a=*b;
+*b=temp;
+cout<<*a<<*b<<"\n";
+}
+void swapr(int &a,int &b)
+{
+int temp;
+temp=a;
+a=b;
+b=temp;
+cout<<a<<b<<"\n";
+}
+int main()
+{
+num ob1,ob2;
+ob1.assign();
+ob2.assign();
+int c;
+cout<<"1.Call by value\n2.Call by address\n3.Call by refernce\nEnter your choice:";
+cin>>c;
+if (c==1)
+{swap(ob1.a,ob2.a);}
+else if (c==2)
+{swap(&ob1.a,&ob2.a);}
+else if(c==3)
+{swapr(ob1.a,ob2.a);}
+else 
+cout<<"Invalid Choice\n";
+return 0;
+}
+
+ OUTPUT
+ 
+Enter value:12
+Enter value:32
+1.Call by value
+2.Call by address
+3.Call by refernce
+Enter your choice:1
+3212
+ 
+Enter value:56   
+Enter value:32
+1.Call by value
+2.Call by address
+3.Call by refernce
+Enter your choice:2
+3256
+ 
+
+Enter value:65
+Enter value:78
+1.Call by value
+2.Call by address
+3.Call by refernce
+Enter your choice:3
+7865
+
+
+
+
+
+
+
+
+
